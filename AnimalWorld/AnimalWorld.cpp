@@ -106,4 +106,16 @@ void AnimalWorld::Simulate()
 		}
 
 	} while (action != -1);
+
+	for (Continent* cont : continents)
+	{
+		for (Herbivore* herb : cont->GetHerbivores())
+		{
+			delete herb;
+		}
+		for (Carnivore* carn : cont->GetCarnivores())
+		{
+			delete carn;
+		}
+	}
 }
